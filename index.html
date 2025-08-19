@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Casa Embrujada - Juego</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="scene"></div>
+
+  <!-- Pantalla de inicio -->
+  <div id="startScreen" class="start-screen">
+    <h1>🏚️ Casa Embrujada</h1>
+    <p>Te encuentras atrapado en una casa embrujada. <br>
+    Para escapar deberás superar <strong>11 niveles</strong>.<br>
+    En cada nivel una pregunta de programación te espera.<br>
+    Solo la puerta correcta se abrirá... ¿Te atreves?</p>
+    <button id="startBtn" class="btn">Comenzar</button>
+  </div>
+
+  <!-- Panel del juego (oculto al inicio) -->
+  <div id="gamePanel" class="panel hidden">
+
+    <!-- ✅ Barra de estado -->
+    <div class="status">
+      <span class="pill">Nivel: <span id="level">1</span>/11</span>
+      <span id="timer" class="pill">⏱️ 10s</span>
+      <span id="score" class="pill">⭐ Puntos: 0</span>
+      <button id="hintBtn" class="btn">Usar pista 🧩</button>
+      <button id="restartBtn" class="btn">Reiniciar</button>
+    </div>
+
+    <!-- Pregunta -->
+    <h2 id="question"></h2>
+
+    <!-- Opciones -->
+    <div id="doors" class="doors"></div>
+  </div>
+
+  <!-- Pantalla final -->
+  <div id="endScreen" class="end-screen hidden">
+    <h1>🎉 ¡Lo lograste! 🎉</h1>
+    <p>Escapaste de la casa embrujada...<br> ¡Eres un verdadero valiente programador 👻💻!</p>
+    <p id="finalScore">⭐ Puntos finales: 0</p>
+    <button id="playAgainBtn" class="btn">Volver a jugar</button>
+  </div>
+
+  <!-- Pantalla de derrota -->
+  <div id="loseScreen" class="lose-screen hidden">
+    <h1>💀 Has perdido 💀</h1>
+    <p>Fallaste demasiadas veces en este nivel.<br> La casa embrujada no te dejará salir... 😱</p>
+    <button id="retryBtn" class="btn">Intentar de nuevo</button>
+  </div>
+
+  <!-- Sonidos -->
+  <audio id="loseSound" src="sound/scream-90747.mp3" preload="auto"></audio>
+  <audio id="winSound" src="sound/goodresult-82807.mp3" preload="auto"></audio>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
